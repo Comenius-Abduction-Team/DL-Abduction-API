@@ -18,19 +18,19 @@ public interface AssertionAbducibleContainer {
      * @param assertion an assertion axiom to be enabled at abduction.
      * @throws AssertionAbducibleException if solver does not support this type of abducible assertion.
      */
-    public void addAssertion(OWLAxiom assertion) throws AssertionAbducibleException;
+    void addAssertion(OWLAxiom assertion) throws AssertionAbducibleException;
 
     /**
      * Method that adds set of assertions to an enumeration that are enabled at abduction.
      * @param assertions an assertion axiom to be enabled at abduction.
      * @throws AssertionAbducibleException if solver does not support this type of abducible assertion.
      */
-    public void addAssertions(Set<OWLAxiom> assertions) throws AssertionAbducibleException;
+    void addAssertions(Set<OWLAxiom> assertions) throws AssertionAbducibleException;
 
     /**
      * Method that adds list of assertion to an enumeration that are enabled at abduction.
      * @param assertions an assertion axiom to be enabled at abduction.
      * @throws AssertionAbducibleException if solver does not support this type of abducible assertion.
      */
-    public void addAssertions(List<OWLAxiom> assertions) throws AssertionAbducibleException;
+    void addAssertions(List<OWLAxiom> assertions) throws AssertionAbducibleException;
 }
