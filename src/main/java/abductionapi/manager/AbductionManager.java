@@ -7,7 +7,6 @@ import abductionapi.monitors.ProgressMonitor;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 
-
 /**
  * AbductionManager generic interface.
  * @author Zuzana Hlávková, hlavkovazuz@gmail.com
@@ -15,19 +14,16 @@ import org.semanticweb.owlapi.model.OWLOntology;
  */
 public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer> extends Runnable {
 
-    ExplanationMonitor explanationMonitor = new ExplanationMonitor();
-    ProgressMonitor progressMonitor = new ProgressMonitor();
-
     /**
      * Sets the background knowledge for an abduction.
      */
-    public void setBackgroundKnowledge(OWLOntology backgroundKnowledge);
+    void setBackgroundKnowledge(OWLOntology backgroundKnowledge);
 
     /**
      * Returns background knowledge.
      * @return OWLOntology
      */
-    public OWLOntology getBackgroundKnowledge();
+    OWLOntology getBackgroundKnowledge();
 
     /**
      * Sets observation for abduction.
@@ -35,19 +31,19 @@ public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer
      * @throws MultiObservationException if solver does not support multi observation.
      * @throws AxiomObservationException if solver does not support this type of observation axiom.
      */
-    public void setObservation(OWLAxiom observation) throws MultiObservationException, AxiomObservationException;
+    void setObservation(OWLAxiom observation) throws MultiObservationException, AxiomObservationException;
 
     /**
      * Returns observation.
      * @return <OBSERVATION_TYPE> observation.
      */
-    public OWLAxiom getObservation() throws MultiObservationException;
+    OWLAxiom getObservation() throws MultiObservationException;
 
-    default public void setTimeout(double seconds){
+    default void setTimeout(double seconds){
         throw new NotSupportedException("setting timeout");
     }
 
-    default public double getTimeout(){
+    default double getTimeout(){
         throw new NotSupportedException("setting timeout");
     }
 
@@ -55,18 +51,18 @@ public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer
      * Sets a solver internal info (debug, timeout, depth, etc.).
      * @param internalSettings solver internal info (debug, timeout, depth, etc.).
      */
-    public void setAdditionalSolverSettings(String internalSettings);
+    void setAdditionalSolverSettings(String internalSettings);
 
     /**
      * Returns abduction explanations.
      * @return Set of explanations.
      */
-    public ExplanationWrapper getExplanations();
+    ExplanationWrapper getExplanations();
 
     /**
      * Thread version method to get explanations.
      */
-    default public void getExplanationsIncrementally() {
+    default void getExplanationsIncrementally() {
         throw new NotSupportedException("multithread explanations");
     }
 
@@ -74,20 +70,20 @@ public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer
      * Returns solver internal info (debug, timeout, depth, etc.).
      * @return a string with solver internal info.
      */
-    public String getOutputAdditionalInfo();
+    String getOutputAdditionalInfo();
 
 
     /**
      * Sets abducibles for abduction
      * @param abducibleContainer to be set to abductionManager.
      */
-    public void setAbducibles(ABDUCIBLE_CONTAINER abducibleContainer);
+    void setAbducibles(ABDUCIBLE_CONTAINER abducibleContainer);
 
     /**
      * Returns abducible container.
      * @return AbducibleContainer with abducibles for the abduction.
      */
-    public ABDUCIBLE_CONTAINER getAbducibles();
+    ABDUCIBLE_CONTAINER getAbducibles();
 
     @Override
     default void run() {
@@ -98,23 +94,19 @@ public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer
      * Returns monitor.
      * @return a instance of Monitor.
      */
-    default ExplanationMonitor getExplanationMonitor() {
-        return explanationMonitor;
-    }
+    ExplanationMonitor getExplanationMonitor();
 
-    default ProgressMonitor getProgressMonitor() {
-        return progressMonitor;
-    }
+    ProgressMonitor getProgressMonitor();
 
     /**
      * Method adds explanation to Monitor.explanations and a notification to monitor is sent.
      * @param explanation a new computed explanation.
      */
-    default void sendExplanation(ExplanationWrapper explanation) {
-        explanationMonitor.addNewExplanation(explanation);
-        explanationMonitor.notifyAll();
+    default void sendExplanation(ExplanationMonitor monitor, ExplanationWrapper explanation) {
+        monitor.addNewExplanation(explanation);
+        monitor.notifyAll();
         try {
-            explanationMonitor.wait();
+            monitor.wait();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -123,12 +115,12 @@ public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer
     /**
      * Method adds explanation to Monitor.explanations and a notification to monitor is sent.
      */
-    default void updateProgress(double progress, String status) {
-        progressMonitor.setProgress(progress);
-        progressMonitor.setStatusMessage(status);
-        progressMonitor.notifyAll();
+    default void updateProgress(ProgressMonitor monitor, double progress, String status) {
+        monitor.setProgress(progress);
+        monitor.setStatusMessage(status);
+        monitor.notifyAll();
         try {
-            progressMonitor.wait();
+            monitor.wait();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

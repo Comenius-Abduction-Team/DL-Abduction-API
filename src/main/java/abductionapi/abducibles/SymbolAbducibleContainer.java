@@ -19,7 +19,7 @@ public interface SymbolAbducibleContainer {
      * @param symbol a symbol to be enabled at abduction
      * @throws SymbolAbducibleException if solver does not support this type of abducible symbol.
      */
-    public void addSymbol(OWLEntity symbol) throws SymbolAbducibleException;
+    void addSymbol(OWLEntity symbol) throws SymbolAbducibleException;
 
     /**
      * Method that adds set of symbols to an enumeration that are enabled at abduction.
@@ -27,7 +27,7 @@ public interface SymbolAbducibleContainer {
      * @param symbols to be enabled at abduction. Can be individuals, roles or concepts.
      * @throws SymbolAbducibleException if solver does not support this type of abducible symbol.
      */
-    public void addSymbols(Set<OWLEntity> symbols) throws SymbolAbducibleException;
+    void addSymbols(Set<OWLEntity> symbols) throws SymbolAbducibleException;
 
     /**
      * Method that adds list of symbols to an enumeration that are enabled at abduction.
@@ -35,5 +35,5 @@ public interface SymbolAbducibleContainer {
      * @param symbols to be enabled at abduction. Can be individuals, roles or concepts.
      * @throws SymbolAbducibleException if solver does not support this type of abducible symbol.
      */
-    public void addSymbols(List<OWLEntity> symbols) throws SymbolAbducibleException;
+    void addSymbols(List<OWLEntity> symbols) throws SymbolAbducibleException;
 }
