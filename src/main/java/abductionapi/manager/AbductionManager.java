@@ -7,6 +7,8 @@ import abductionapi.monitors.ProgressMonitor;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 
+import java.util.List;
+
 /**
  * AbductionManager generic interface.
  * @author Zuzana Hlávková, hlavkovazuz@gmail.com
@@ -57,7 +59,7 @@ public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer
      * Returns abduction explanations.
      * @return Set of explanations.
      */
-    ExplanationWrapper getExplanations();
+    List<ExplanationWrapper> getExplanations();
 
     /**
      * Thread version method to get explanations.
