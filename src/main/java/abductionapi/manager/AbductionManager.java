@@ -89,7 +89,7 @@ public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer
 
     @Override
     default void run() {
-        throw new ThreadVersionException();
+        throw new NotSupportedException("multi-thread mode");
     }
 
     /**
