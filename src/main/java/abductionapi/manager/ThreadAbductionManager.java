@@ -1,15 +1,8 @@
 package abductionapi.manager;
 
 import abductionapi.abducibles.AbducibleContainer;
-import abductionapi.exception.InvalidObservationException;
-import abductionapi.exception.MultiObservationException;
 import abductionapi.exception.NotSupportedException;
-import abductionapi.monitors.ExplanationMonitor;
-import abductionapi.monitors.ProgressMonitor;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLOntology;
-
-import java.util.Set;
+import abductionapi.monitors.AbductionMonitor;
 
 /**
  * AbductionManager generic interface.
@@ -29,15 +22,13 @@ public interface ThreadAbductionManager<ABDUCIBLE_CONTAINER extends AbducibleCon
      * Returns monitor.
      * @return a instance of Monitor.
      */
-    ExplanationMonitor getExplanationMonitor();
-
-    ProgressMonitor getProgressMonitor();
+    AbductionMonitor getAbductionMonitor();
 
     /**
      * Method adds explanation to Monitor.explanations and a notification to monitor is sent.
      * @param explanation a new computed explanation.
      */
-    default void sendExplanation(ExplanationMonitor monitor, ExplanationWrapper explanation) {
+    default void sendExplanation(AbductionMonitor monitor, ExplanationWrapper explanation) {
         monitor.addNewExplanation(explanation);
         monitor.notifyAll();
         try {
@@ -50,7 +41,7 @@ public interface ThreadAbductionManager<ABDUCIBLE_CONTAINER extends AbducibleCon
     /**
      * Method adds explanation to Monitor.explanations and a notification to monitor is sent.
      */
-    default void updateProgress(ProgressMonitor monitor, double progress, String status) {
+    default void updateProgress(AbductionMonitor monitor, double progress, String status) {
         monitor.setProgress(progress);
         monitor.setStatusMessage(status);
         monitor.notifyAll();
