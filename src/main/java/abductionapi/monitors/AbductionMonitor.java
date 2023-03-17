@@ -2,22 +2,17 @@ package abductionapi.monitors;
 
 import abductionapi.manager.ExplanationWrapper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class Monitor.
- * @author Zuzana Hlávková, hlavkovazuz@gmail.com
- *
- * @param <EXPLANATION_TYPE> explanation type parameter
  */
-public class ExplanationMonitor {
+public class AbductionMonitor {
 
     List<ExplanationWrapper> explanations;
-
-    public ExplanationMonitor() {
-        explanations = new ArrayList<>();
-    }
+    double progress = 0;
+    String statusMessage = "";
+    boolean newExplanation = false;
+    boolean newProgress = false;
 
     /**
      * Add new explanation to the list explanations.
@@ -29,6 +24,7 @@ public class ExplanationMonitor {
         } else {
             explanations.add(explanation);
         }
+        newExplanation = true;
     }
 
     /**
@@ -48,5 +44,23 @@ public class ExplanationMonitor {
      */
     public List<ExplanationWrapper> getExplanations() {
         return explanations;
+    }
+
+    public double getProgress() {
+        return progress;
+    }
+
+    public void setProgress(double progress) {
+        this.progress = progress;
+        newProgress = true;
+    }
+
+    public String getStatusMessage() {
+        return statusMessage;
+    }
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+        newProgress = true;
     }
 }
