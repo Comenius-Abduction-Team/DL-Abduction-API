@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * Interface declaring methods to add abducibles in the form of DL assertion axioms.
  */
-public interface AxiomAbducibleContainer {
+public interface AxiomAbducibleContainer extends AbducibleContainer {
 
     /**
      * Adds axiom axiom into the set of abducibles.

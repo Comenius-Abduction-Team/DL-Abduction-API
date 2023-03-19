@@ -11,7 +11,7 @@ import java.util.Set;
  * * Interface declaring methods to add abducibles in the form of DL symbol names.
  * @author Zuzana Hlávková, hlavkovazuz@gmail.com
  */
-public interface SymbolAbducibleContainer {
+public interface SymbolAbducibleContainer extends AbducibleContainer {
 
     /**
      * Method that adds symbol to an enumeration that is enabled at abduction.
