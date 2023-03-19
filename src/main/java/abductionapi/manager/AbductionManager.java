@@ -12,7 +12,7 @@ import java.util.Set;
  * @author Zuzana Hlávková, hlavkovazuz@gmail.com
  *
  */
-public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer> {
+public interface AbductionManager {
 
     /**
      * Sets the background knowledge for an abduction.
@@ -69,12 +69,12 @@ public interface AbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer
      * Sets abducibles for abduction
      * @param abducibleContainer to be set to abductionManager.
      */
-    void setAbducibles(ABDUCIBLE_CONTAINER abducibleContainer);
+    void setAbducibles(AbducibleContainer abducibleContainer);
 
     /**
      * Returns abducible container.
      * @return AbducibleContainer with abducibles for the abduction.
      */
-    ABDUCIBLE_CONTAINER getAbducibles();
+    AbducibleContainer getAbducibles();
 
 }
