@@ -1,6 +1,5 @@
 package abductionapi.manager;
 
-import abductionapi.abducibles.AbducibleContainer;
 import abductionapi.exception.NotSupportedException;
 import abductionapi.monitors.AbductionMonitor;
 
@@ -9,7 +8,7 @@ import abductionapi.monitors.AbductionMonitor;
  * @author Zuzana Hlávková, hlavkovazuz@gmail.com
  *
  */
-public interface ThreadAbductionManager<ABDUCIBLE_CONTAINER extends AbducibleContainer> extends Runnable {
+public interface ThreadAbductionManager extends Runnable {
 
     /**
      * Thread version method to get explanations.
