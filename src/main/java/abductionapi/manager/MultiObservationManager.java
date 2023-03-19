@@ -6,7 +6,6 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 
 import java.util.Set;
 
-
 /**
  * AbductionManager generic interface.
  * @author Zuzana Hlávková, hlavkovazuz@gmail.com
@@ -20,12 +19,12 @@ public interface MultiObservationManager {
      * @throws MultiObservationException if solver does not support multi observation.
      * @throws InvalidObservationException if solver does not support this type of observation axiom.
      */
-    default void setObservations(Set<OWLAxiom> observation) throws InvalidObservationException { }
+    default void setMultipleObservations(Set<OWLAxiom> observation) throws InvalidObservationException { }
 
     /**
      * Returns observation.
      * @return <OBSERVATION_TYPE> observation.
      */
-    Set<OWLAxiom> getObservations();
+    Set<OWLAxiom> getMultipleObservations();
 
 }
