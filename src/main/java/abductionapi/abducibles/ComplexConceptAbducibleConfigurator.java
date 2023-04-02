@@ -1,11 +1,9 @@
 package abductionapi.abducibles;
 
-
 import abductionapi.exception.NotSupportedException;
 
 /**
  * Interface declaring methods to configure the usage of complex concepts in explanations.
- * @author Zuzana Hlávková, hlavkovazuz@gmail.com
  */
 public interface ComplexConceptAbducibleConfigurator {
 
@@ -18,8 +16,7 @@ public interface ComplexConceptAbducibleConfigurator {
     }
 
     /**
-     * Enables/disables complex concepts at abduction.
-     * @param allowComplexConcepts is a flag which indicates if complex concepts are enabled or not.
+     * Enables/disables complex concepts in explanations.
      * @throws NotSupportedException if solver does not support complex concept enabling.
      */
     default void allowComplexConcepts(Boolean allowComplexConcepts) throws NotSupportedException {
