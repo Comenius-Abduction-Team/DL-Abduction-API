@@ -26,7 +26,7 @@ public interface AbductionFactory<
 
     AbductionManager getAbductionManager();
 
-    AbductionManager getAbductionManagerWithInput(OWLOntology ontology, OWLAxiom observation);
+    AbductionManager getAbductionManagerWithInput(OWLOntology knowledgeBase, OWLAxiom observation);
 
     default AbductionManager getAbductionManagerWithSymbolAbducibles(Set<OWLEntity> symbols){
         throw new NotSupportedException("symbol abducibles");
