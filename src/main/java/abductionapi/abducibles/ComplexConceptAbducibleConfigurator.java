@@ -2,49 +2,29 @@ package abductionapi.abducibles;
 
 import abductionapi.exception.NotSupportedException;
 
-/**
- * Interface declaring methods to configure the usage of complex concepts in explanations.
- */
 public interface ComplexConceptAbducibleConfigurator {
 
-    /**
-     * Method that allows complex concepts at abduction
-     * @throws NotSupportedException if solver does not support complex concept enabling.
-     */
     default void allowComplexConcepts() throws NotSupportedException {
-        throw new NotSupportedException("enabling complex concept");
+        throw new NotSupportedException("configurating complex concepts");
     }
 
-    /**
-     * Enables/disables complex concepts in explanations.
-     * @throws NotSupportedException if solver does not support complex concept enabling.
-     */
     default void allowComplexConcepts(Boolean allowComplexConcepts) throws NotSupportedException {
-        throw new NotSupportedException("enabling complex concept");
+        throw new NotSupportedException("configurating complex concepts");
     }
 
-    /**
-     * Method that allows concept complement at abduction.
-     * @throws NotSupportedException if solver does not support concept complement enabling.
-     */
     default void allowConceptComplements() throws NotSupportedException {
-        throw new NotSupportedException("enabling concept complement");
+        throw new NotSupportedException("configurating concept complements");
     }
 
-    /**
-     * Enables/disables concept complement at abduction.
-     * @param allowConceptComplements is a flag which indicates if concept complement are enabled or not.
-     * @throws NotSupportedException if solver does not support concept complement enabling.
-     */
     default void allowConceptComplements(Boolean allowConceptComplements) throws NotSupportedException {
-        throw new NotSupportedException("enabling concept complement");
+        throw new NotSupportedException("configurating concept complements");
     }
 
     default boolean areComplexConceptsAllowed() throws NotSupportedException {
-        throw new NotSupportedException("enabling complex concept");
+        throw new NotSupportedException("configurating complex concepts");
     }
 
     default boolean areConceptComplementsAllowed() throws NotSupportedException {
-        throw new NotSupportedException("enabling concept complement");
+        throw new NotSupportedException("configurating concept complements");
     }
 }

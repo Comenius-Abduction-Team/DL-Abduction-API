@@ -1,8 +1,5 @@
 package abductionapi.exception;
 
-/**
- * @author Zuzana Hlávková, hlavkovazuz@gmail.com
- */
 public class CommonException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
