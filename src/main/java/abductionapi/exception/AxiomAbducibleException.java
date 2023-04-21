@@ -1,11 +1,11 @@
 package abductionapi.exception;
 
-/**
- * @author Zuzana Hlávková, hlavkovazuz@gmail.com
- */
+import org.semanticweb.owlapi.model.OWLAxiom;
+
 public class AxiomAbducibleException extends CommonException {
 
-    public AxiomAbducibleException(String message) {
-        super("Solver does not support this type of abducible axiom: " + message);
+    public AxiomAbducibleException(OWLAxiom axiom) {
+        super("Solver does not support this type of axiom abducible: " +
+                axiom + " of type " + axiom.getAxiomType());
     }
 }

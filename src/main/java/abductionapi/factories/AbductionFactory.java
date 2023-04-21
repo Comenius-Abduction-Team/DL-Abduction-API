@@ -10,16 +10,10 @@ import org.semanticweb.owlapi.model.OWLOntology;
 
 import java.util.Set;
 
-/**
- * AbductionManagerAndAbducibleContainerFactory generic interface.
- * @author Zuzana Hlávková, hlavkovazuz@gmail.com
- *
- * @param <ABDUCTION_MANAGER> AbductionManager type parameter
- */
 public interface AbductionFactory<
         ABDUCTION_MANAGER extends AbductionManager,
-        SYMBOL_ABDUCIBLE_CONTAINER extends SymbolAbducibleContainer,
-        AXIOM_ABDUCIBLE_CONTAINER extends AxiomAbducibleContainer
+        SYMBOL_ABDUCIBLES extends SymbolAbducibleContainer,
+        AXIOM_ABDUCIBLES extends AxiomAbducibleContainer
         > {
 
     ABDUCTION_MANAGER getSolverSpecificAbductionManager();
@@ -44,11 +38,11 @@ public interface AbductionFactory<
         throw new NotSupportedException("symbol abducibles");
     }
 
-    default AXIOM_ABDUCIBLE_CONTAINER getSolverSpecificAxiomAbducibleContainer(){
+    default AXIOM_ABDUCIBLES getSolverSpecificAxiomAbducibleContainer(){
         throw new NotSupportedException("axiom abducibles");
     }
 
-    default SYMBOL_ABDUCIBLE_CONTAINER getSolverSpecificSymbolAbducibleContainer(){
+    default SYMBOL_ABDUCIBLES getSolverSpecificSymbolAbducibleContainer(){
         throw new NotSupportedException("symbol abducibles");
     }
 }

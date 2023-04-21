@@ -14,10 +14,6 @@ public class AbductionMonitor {
     boolean newExplanation = false;
     boolean newProgress = false;
 
-    /**
-     * Add new explanation to the list explanations.
-     * @param explanation a new computed explanation to be added to the list
-     */
     public void addNewExplanation(ExplanationWrapper explanation) {
         if(explanation == null) {
             explanations = null;
@@ -27,10 +23,6 @@ public class AbductionMonitor {
         newExplanation = true;
     }
 
-    /**
-     * Returns the last computed explanation.
-     * @return the last computed explanation
-     */
     public ExplanationWrapper getNextExplanation() {
         if (explanations == null) {
             return null;
@@ -38,10 +30,6 @@ public class AbductionMonitor {
         return explanations.get(explanations.size() - 1);
     }
 
-    /**
-     * Returns list of explanations.
-     * @return list explanations
-     */
     public List<ExplanationWrapper> getExplanations() {
         return explanations;
     }
