@@ -1,6 +1,6 @@
-package abductionapi.abducibles;
+package abduction_api.abducibles;
 
-import abductionapi.exception.NotSupportedException;
+import abduction_api.exception.NotSupportedException;
 
 public interface ComplexConceptAbducibleConfigurator {
 

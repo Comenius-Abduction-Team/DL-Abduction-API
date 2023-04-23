@@ -1,4 +1,4 @@
-package abductionapi.exception;
+package abduction_api.exception;
 
 import org.semanticweb.owlapi.model.OWLAxiom;
 

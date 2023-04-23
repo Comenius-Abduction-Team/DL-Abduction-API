@@ -1,6 +1,6 @@
-package abductionapi.monitors;
+package abduction_api.monitors;
 
-import abductionapi.manager.ExplanationWrapper;
+import abduction_api.manager.ExplanationWrapper;
 
 import java.util.List;
 
