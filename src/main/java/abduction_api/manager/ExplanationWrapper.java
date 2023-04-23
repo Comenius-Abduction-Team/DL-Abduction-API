@@ -11,20 +11,24 @@ public class ExplanationWrapper {
 
     private final Set<OWLAxiom> axioms;
     private String textRepresentation;
+    private final int size;
 
     public ExplanationWrapper(String textRepresentation){
         axioms = new HashSet<>();
         this.textRepresentation = textRepresentation;
+        size = 0;
     }
 
     public ExplanationWrapper(Set<OWLAxiom> axioms, String textRepresentation){
         this.axioms = axioms;
         this.textRepresentation = textRepresentation;
+        size = axioms.size();
     }
 
     public ExplanationWrapper(OWLAxiom axiom, String textRepresentation){
         axioms = Collections.singleton(axiom);
         this.textRepresentation = textRepresentation;
+        size = 1;
     }
 
     public Set<OWLAxiom> getAxiomSet(){
@@ -46,7 +50,12 @@ public class ExplanationWrapper {
         this.textRepresentation = textRepresentation;
     }
 
-    public boolean containsMultipleAxioms(){
-        return axioms.size() > 1;
+    public int getSize() {
+        return size;
+    }
+
+    @Override
+    public String toString() {
+        return textRepresentation;
     }
 }
