@@ -1,4 +1,4 @@
-package abductionapi.exception;
+package abduction_api.exception;
 
 public class NotSupportedException extends CommonException {
 

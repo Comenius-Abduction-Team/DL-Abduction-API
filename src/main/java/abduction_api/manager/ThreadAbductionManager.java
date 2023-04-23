@@ -1,7 +1,7 @@
-package abductionapi.manager;
+package abduction_api.manager;
 
-import abductionapi.exception.NotSupportedException;
-import abductionapi.monitors.AbductionMonitor;
+import abduction_api.exception.NotSupportedException;
+import abduction_api.monitors.AbductionMonitor;
 
 public interface ThreadAbductionManager extends Runnable {
 

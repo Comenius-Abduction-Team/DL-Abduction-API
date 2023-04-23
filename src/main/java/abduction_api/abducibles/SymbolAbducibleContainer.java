@@ -1,11 +1,9 @@
-package abductionapi.abducibles;
+package abduction_api.abducibles;
 
-import abductionapi.exception.SymbolAbducibleException;
+import abduction_api.exception.SymbolAbducibleException;
 import org.semanticweb.owlapi.model.OWLEntity;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
 public interface SymbolAbducibleContainer extends AbducibleContainer {
 
