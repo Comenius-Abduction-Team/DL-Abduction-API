@@ -25,6 +25,7 @@ public class AbductionMonitor {
     }
 
     public void markExplanationsAsProcessed(){
+        explanations.clear();
         newExplanationsAvailable = false;
     }
 
