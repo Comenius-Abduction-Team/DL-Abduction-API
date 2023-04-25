@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class AbductionMonitor {
 
+    ExplanationWrapper lastExplanation;
     List<ExplanationWrapper> explanations;
     double progress = 0;
     String statusMessage = "";
@@ -15,19 +16,21 @@ public class AbductionMonitor {
     boolean newProgress = false;
 
     public void addNewExplanation(ExplanationWrapper explanation) {
-        if(explanation == null) {
-            explanations = null;
-        } else {
-            explanations.add(explanation);
-        }
+        lastExplanation = explanation;
+//        if(explanation == null) {
+//            explanations = null;
+//        } else {
+//            explanations.add(explanation);
+//        }
         newExplanation = true;
     }
 
     public ExplanationWrapper getNextExplanation() {
-        if (explanations == null) {
-            return null;
-        }
-        return explanations.get(explanations.size() - 1);
+        return lastExplanation;
+//        if (explanations == null) {
+//            return null;
+//        }
+//        return explanations.get(explanations.size() - 1);
     }
 
     public List<ExplanationWrapper> getExplanations() {
