@@ -27,6 +27,8 @@ public interface AbductionManager {
 
     void setAdditionalSolverSettings(String internalSettings);
 
+    void solveAbduction();
+
     Set<ExplanationWrapper> getExplanations();
 
     String getOutputAdditionalInfo();
