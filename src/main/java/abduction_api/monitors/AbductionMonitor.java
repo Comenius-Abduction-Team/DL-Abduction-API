@@ -2,56 +2,41 @@ package abduction_api.monitors;
 
 import abduction_api.manager.ExplanationWrapper;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  */
 public class AbductionMonitor {
 
-    ExplanationWrapper lastExplanation;
-    List<ExplanationWrapper> explanations;
+    Set<ExplanationWrapper> explanations;
     double progress = 0;
     String statusMessage = "";
 
-    public boolean isNewExplanation() {
-        return newExplanation;
+    boolean newExplanationsAvailable = false;
+    boolean newProgressAvailable = false;
+
+    public boolean areNewExplanationsAvailable() {
+        return newExplanationsAvailable;
     }
 
-    public boolean isNewProgress() {
-        return newProgress;
+    public boolean isNewProgressAvailable() {
+        return newProgressAvailable;
     }
 
-    boolean newExplanation = false;
-    boolean newProgress = false;
-
-
-    public void markExplanationAsProcessed(){
-        newExplanation = false;
+    public void markExplanationsAsProcessed(){
+        newExplanationsAvailable = false;
     }
 
     public void markProgressAsProcessed(){
-        newProgress = false;
+        newProgressAvailable = false;
     }
 
     public void addNewExplanation(ExplanationWrapper explanation) {
-        lastExplanation = explanation;
-//        if(explanation == null) {
-//            explanations = null;
-//        } else {
-//            explanations.add(explanation);
-//        }
-        newExplanation = true;
+        explanations.add(explanation);
+        newExplanationsAvailable = true;
     }
 
-    public ExplanationWrapper getNextExplanation() {
-        return lastExplanation;
-//        if (explanations == null) {
-//            return null;
-//        }
-//        return explanations.get(explanations.size() - 1);
-    }
-
-    public List<ExplanationWrapper> getExplanations() {
+    public Set<ExplanationWrapper> getExplanations() {
         return explanations;
     }
 
@@ -61,7 +46,7 @@ public class AbductionMonitor {
 
     public void setProgress(double progress) {
         this.progress = progress;
-        newProgress = true;
+        newProgressAvailable = true;
     }
 
     public String getStatusMessage() {
@@ -70,6 +55,6 @@ public class AbductionMonitor {
 
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
-        newProgress = true;
+        newProgressAvailable = true;
     }
 }
