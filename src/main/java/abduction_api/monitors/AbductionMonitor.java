@@ -2,13 +2,14 @@ package abduction_api.monitors;
 
 import abduction_api.manager.ExplanationWrapper;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
  */
 public class AbductionMonitor {
 
-    Set<ExplanationWrapper> explanations;
+    Set<ExplanationWrapper> explanations = new HashSet<>();
     double progress = 0;
     String statusMessage = "";
 
@@ -56,5 +57,11 @@ public class AbductionMonitor {
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
         newProgressAvailable = true;
+    }
+
+    public void clearResults(){
+        explanations = new HashSet<>();
+        progress = 0;
+        statusMessage = "";
     }
 }
