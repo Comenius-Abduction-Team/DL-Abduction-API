@@ -12,8 +12,26 @@ public class AbductionMonitor {
     List<ExplanationWrapper> explanations;
     double progress = 0;
     String statusMessage = "";
+
+    public boolean isNewExplanation() {
+        return newExplanation;
+    }
+
+    public boolean isNewProgress() {
+        return newProgress;
+    }
+
     boolean newExplanation = false;
     boolean newProgress = false;
+
+
+    public void markExplanationAsProcessed(){
+        newExplanation = false;
+    }
+
+    public void markProgressAsProcessed(){
+        newProgress = false;
+    }
 
     public void addNewExplanation(ExplanationWrapper explanation) {
         lastExplanation = explanation;
