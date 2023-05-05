@@ -31,7 +31,9 @@ public interface AbductionManager {
 
     Set<ExplanationWrapper> getExplanations();
 
-    String getOutputAdditionalInfo();
+    String getOutputMessage();
+
+    String getFullLog();
 
     void setAbducibles(AbducibleContainer abducibleContainer);
 
