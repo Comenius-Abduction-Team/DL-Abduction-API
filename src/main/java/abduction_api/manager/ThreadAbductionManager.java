@@ -12,25 +12,17 @@ public interface ThreadAbductionManager extends Runnable {
 
     AbductionMonitor getAbductionMonitor();
 
-    default void sendExplanation(AbductionMonitor monitor, ExplanationWrapper explanation) {
+    default void sendExplanation(AbductionMonitor monitor, ExplanationWrapper explanation) throws InterruptedException {
         monitor.addNewExplanation(explanation);
         monitor.notifyAll();
-        try {
-            monitor.wait();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        monitor.wait();
     }
 
-    default void updateProgress(AbductionMonitor monitor, double progress, String status) {
+    default void updateProgress(AbductionMonitor monitor, double progress, String status) throws InterruptedException {
         monitor.setProgress(progress);
         monitor.setStatusMessage(status);
         monitor.notifyAll();
-        try {
-            monitor.wait();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        monitor.wait();
     }
 
 }
