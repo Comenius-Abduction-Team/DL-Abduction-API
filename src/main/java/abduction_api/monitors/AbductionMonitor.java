@@ -5,8 +5,6 @@ import abduction_api.manager.ExplanationWrapper;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- */
 public class AbductionMonitor {
 
     Set<ExplanationWrapper> explanations = new HashSet<>();
@@ -25,8 +23,11 @@ public class AbductionMonitor {
     }
 
     public void markExplanationsAsProcessed(){
-        explanations.clear();
         newExplanationsAvailable = false;
+    }
+
+    public void clearExplanations(){
+        explanations.clear();
     }
 
     public void markProgressAsProcessed(){
