@@ -17,23 +17,25 @@ public interface AbductionManager {
 
     OWLAxiom getObservation() throws MultiObservationException;
 
-    default void setTimeout(double seconds){
+    default void setTimeout(double seconds) throws NotSupportedException {
         throw new NotSupportedException("setting timeout");
     }
 
-    default double getTimeout(){
+    default double getTimeout() throws NotSupportedException {
         throw new NotSupportedException("setting timeout");
     }
 
-    void setAdditionalSolverSettings(String internalSettings);
+    default void setAdditionalSolverSettings(String internalSettings) throws NotSupportedException {
+        throw new NotSupportedException("setting string parameters");
+    }
 
     void solveAbduction();
 
     Set<ExplanationWrapper> getExplanations();
 
-    String getOutputMessage();
+    default String getOutputMessage(){ return ""; }
 
-    String getFullLog();
+    default String getFullLog(){ return ""; }
 
     void setAbducibleContainer(AbducibleContainer abducibleContainer);
 

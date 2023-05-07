@@ -7,7 +7,7 @@ import java.util.Set;
 
 public interface MultiObservationManager {
 
-    default void setMultipleObservations(Set<OWLAxiom> observation) throws InvalidObservationException { }
+    void setMultipleObservations(Set<OWLAxiom> observation) throws InvalidObservationException;
 
     Set<OWLAxiom> getMultipleObservations();
 

@@ -1,14 +1,8 @@
 package abduction_api.manager;
 
-import abduction_api.exception.NotSupportedException;
 import abduction_api.monitors.AbductionMonitor;
 
 public interface ThreadAbductionManager extends Runnable {
-
-
-    default void getExplanationsAsynchronously() {
-        throw new NotSupportedException("multithread explanations");
-    }
 
     AbductionMonitor getAbductionMonitor();
 

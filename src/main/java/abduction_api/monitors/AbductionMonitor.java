@@ -14,12 +14,29 @@ public class AbductionMonitor {
     boolean newExplanationsAvailable = false;
     boolean newProgressAvailable = false;
 
+    public boolean isNewProgressAvailable() {
+        return newProgressAvailable;
+    }
+
+    public double getProgress() {
+        return progress;
+    }
+
+    public void markProgressAsProcessed(){
+        newProgressAvailable = false;
+    }
+
+    public void setProgress(double progress) {
+        this.progress = progress;
+        newProgressAvailable = true;
+    }
+
     public boolean areNewExplanationsAvailable() {
         return newExplanationsAvailable;
     }
 
-    public boolean isNewProgressAvailable() {
-        return newProgressAvailable;
+    public Set<ExplanationWrapper> getExplanations() {
+        return explanations;
     }
 
     public void markExplanationsAsProcessed(){
@@ -30,26 +47,9 @@ public class AbductionMonitor {
         explanations.clear();
     }
 
-    public void markProgressAsProcessed(){
-        newProgressAvailable = false;
-    }
-
     public void addNewExplanation(ExplanationWrapper explanation) {
         explanations.add(explanation);
         newExplanationsAvailable = true;
-    }
-
-    public Set<ExplanationWrapper> getExplanations() {
-        return explanations;
-    }
-
-    public double getProgress() {
-        return progress;
-    }
-
-    public void setProgress(double progress) {
-        this.progress = progress;
-        newProgressAvailable = true;
     }
 
     public String getStatusMessage() {
@@ -61,7 +61,7 @@ public class AbductionMonitor {
         newProgressAvailable = true;
     }
 
-    public void clearResults(){
+    public void clearMonitor(){
         clearExplanations();
         progress = 0;
         statusMessage = "";
