@@ -62,7 +62,7 @@ public class AbductionMonitor {
     }
 
     public void clearResults(){
-        explanations = new HashSet<>();
+        clearExplanations();
         progress = 0;
         statusMessage = "";
     }
