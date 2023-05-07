@@ -9,9 +9,9 @@ import java.util.Set;
 
 public interface AbductionManager {
 
-    void setKnowledgeBase(OWLOntology knowledgeBase);
+    void setBackgroundKnowledge(OWLOntology backgroundKnowledge);
 
-    OWLOntology getKnowledgeBase();
+    OWLOntology getBackgroundKnowledge();
 
     void setObservation(OWLAxiom observation) throws MultiObservationException, InvalidObservationException;
 
