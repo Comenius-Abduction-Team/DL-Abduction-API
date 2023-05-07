@@ -35,8 +35,8 @@ public interface AbductionManager {
 
     String getFullLog();
 
-    void setAbducibles(AbducibleContainer abducibleContainer);
+    void setAbducibleContainer(AbducibleContainer abducibleContainer);
 
-    AbducibleContainer getAbducibles();
+    AbducibleContainer getAbducibleContainer();
 
 }
