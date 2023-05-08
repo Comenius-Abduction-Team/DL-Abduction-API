@@ -25,7 +25,7 @@ public interface AbductionManager {
         throw new NotSupportedException("setting timeout");
     }
 
-    default void setSolverSpecificParameters(String parameters) throws NotSupportedException {
+    default void setSolverSpecificParameters(String parameters) throws NotSupportedException, InvalidSolverParameterException {
         throw new NotSupportedException("setting string parameters");
     }
 

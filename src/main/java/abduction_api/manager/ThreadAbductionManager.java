@@ -2,7 +2,7 @@ package abduction_api.manager;
 
 import abduction_api.monitors.AbductionMonitor;
 
-public interface ThreadAbductionManager extends Runnable {
+public interface ThreadAbductionManager extends AbductionManager, Runnable {
 
     AbductionMonitor getAbductionMonitor();
 

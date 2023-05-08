@@ -5,7 +5,7 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 
 import java.util.Set;
 
-public interface MultiObservationManager {
+public interface MultiObservationManager extends AbductionManager {
 
     void setMultipleObservations(Set<OWLAxiom> observation) throws InvalidObservationException;
 
