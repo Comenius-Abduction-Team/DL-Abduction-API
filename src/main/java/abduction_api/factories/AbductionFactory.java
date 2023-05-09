@@ -1,5 +1,6 @@
 package abduction_api.factories;
 
+import abduction_api.abducibles.AbducibleContainer;
 import abduction_api.abducibles.AxiomAbducibleContainer;
 import abduction_api.abducibles.SymbolAbducibleContainer;
 import abduction_api.exception.AxiomAbducibleException;
@@ -40,6 +41,8 @@ public interface AbductionFactory {
             throws NotSupportedException, InvalidObservationException{
         throw new NotSupportedException("multi-thread abduction");
     }
+
+    AbducibleContainer getAbducibleContainer();
 
     default SymbolAbducibleContainer getSymbolAbducibleContainer()
             throws NotSupportedException, SymbolAbducibleException {
