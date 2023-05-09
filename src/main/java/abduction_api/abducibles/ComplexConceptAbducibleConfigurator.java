@@ -2,7 +2,7 @@ package abduction_api.abducibles;
 
 import abduction_api.exception.NotSupportedException;
 
-public interface ComplexConceptAbducibleConfigurator {
+public interface ComplexConceptAbducibleConfigurator extends AbducibleContainer {
 
     default void allowComplexConcepts() throws NotSupportedException {
         throw new NotSupportedException("configurating complex concepts");

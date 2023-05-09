@@ -2,7 +2,7 @@ package abduction_api.abducibles;
 
 import abduction_api.exception.NotSupportedException;
 
-public interface ConceptAbducibleConfigurator {
+public interface ConceptAbducibleConfigurator extends AbducibleContainer {
 
     default void allowConceptAssertions() throws NotSupportedException {
         throw new NotSupportedException("configurating concept assertions");
