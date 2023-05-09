@@ -9,34 +9,40 @@ import java.util.Set;
 
 public interface AbductionManager {
 
-    void setKnowledgeBase(OWLOntology knowledgeBase);
+    void setBackgroundKnowledge(OWLOntology backgroundKnowledge);
 
-    OWLOntology getKnowledgeBase();
+    OWLOntology getBackgroundKnowledge();
 
     void setObservation(OWLAxiom observation) throws MultiObservationException, InvalidObservationException;
 
     OWLAxiom getObservation() throws MultiObservationException;
 
-    default void setTimeout(double seconds){
+    default void setTimeout(double seconds) throws NotSupportedException {
         throw new NotSupportedException("setting timeout");
     }
 
-    default double getTimeout(){
+    default double getTimeout() throws NotSupportedException {
         throw new NotSupportedException("setting timeout");
     }
 
-    void setAdditionalSolverSettings(String internalSettings);
+    default void setSolverSpecificParameters(String parameters) throws NotSupportedException, InvalidSolverParameterException {
+        throw new NotSupportedException("setting string parameters");
+    }
+
+    default void resetSolverSpecificParameters() throws NotSupportedException {
+        throw new NotSupportedException("setting string parameters");
+    }
 
     void solveAbduction();
 
     Set<ExplanationWrapper> getExplanations();
 
-    String getOutputMessage();
+    default String getOutputMessage(){ return ""; }
 
-    String getFullLog();
+    default String getFullLog(){ return ""; }
 
-    void setAbducibles(AbducibleContainer abducibleContainer);
+    void setAbducibleContainer(AbducibleContainer abducibleContainer);
 
-    AbducibleContainer getAbducibles();
+    AbducibleContainer getAbducibleContainer();
 
 }

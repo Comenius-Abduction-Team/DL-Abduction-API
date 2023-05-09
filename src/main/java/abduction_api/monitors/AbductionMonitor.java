@@ -5,8 +5,6 @@ import abduction_api.manager.ExplanationWrapper;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- */
 public class AbductionMonitor {
 
     Set<ExplanationWrapper> explanations = new HashSet<>();
@@ -16,39 +14,42 @@ public class AbductionMonitor {
     boolean newExplanationsAvailable = false;
     boolean newProgressAvailable = false;
 
-    public boolean areNewExplanationsAvailable() {
-        return newExplanationsAvailable;
-    }
-
     public boolean isNewProgressAvailable() {
         return newProgressAvailable;
-    }
-
-    public void markExplanationsAsProcessed(){
-        explanations.clear();
-        newExplanationsAvailable = false;
-    }
-
-    public void markProgressAsProcessed(){
-        newProgressAvailable = false;
-    }
-
-    public void addNewExplanation(ExplanationWrapper explanation) {
-        explanations.add(explanation);
-        newExplanationsAvailable = true;
-    }
-
-    public Set<ExplanationWrapper> getExplanations() {
-        return explanations;
     }
 
     public double getProgress() {
         return progress;
     }
 
+    public void markProgressAsProcessed(){
+        newProgressAvailable = false;
+    }
+
     public void setProgress(double progress) {
         this.progress = progress;
         newProgressAvailable = true;
+    }
+
+    public boolean areNewExplanationsAvailable() {
+        return newExplanationsAvailable;
+    }
+
+    public Set<ExplanationWrapper> getExplanations() {
+        return explanations;
+    }
+
+    public void markExplanationsAsProcessed(){
+        newExplanationsAvailable = false;
+    }
+
+    public void clearExplanations(){
+        explanations.clear();
+    }
+
+    public void addNewExplanation(ExplanationWrapper explanation) {
+        explanations.add(explanation);
+        newExplanationsAvailable = true;
     }
 
     public String getStatusMessage() {
@@ -60,8 +61,8 @@ public class AbductionMonitor {
         newProgressAvailable = true;
     }
 
-    public void clearResults(){
-        explanations = new HashSet<>();
+    public void clearMonitor(){
+        clearExplanations();
         progress = 0;
         statusMessage = "";
     }

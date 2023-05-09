@@ -1,8 +1,8 @@
 package abduction_api.exception;
 
-public class InvalidSolverSettingException extends CommonException {
+public class InvalidSolverParameterException extends CommonException {
 
-    public InvalidSolverSettingException(String parameter, String message) {
+    public InvalidSolverParameterException(String parameter, String message) {
         super("There was an error parsing the solver parameter '" + parameter + "' caused by: " + message);
     }
 }

@@ -2,7 +2,7 @@ package abduction_api.abducibles;
 
 import abduction_api.exception.NotSupportedException;
 
-public interface RoleAbducibleConfigurator {
+public interface RoleAbducibleConfigurator extends AbducibleContainer {
 
     default void allowRoleAssertions() throws NotSupportedException {
         throw new NotSupportedException("configurating role assertions");

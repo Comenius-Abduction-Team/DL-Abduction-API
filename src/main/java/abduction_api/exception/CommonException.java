@@ -2,7 +2,7 @@ package abduction_api.exception;
 
 public class CommonException extends RuntimeException {
 
-    private static final long serialVersionUID = 1L;
+    protected CommonException(){ super(); }
 
     public CommonException(String message, Exception ex) {
         super(message, ex);
