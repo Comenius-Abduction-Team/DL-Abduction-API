@@ -27,4 +27,6 @@ public interface RoleAbducibleConfigurator extends AbducibleContainer {
     default boolean areLoopsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating loops");
     }
+
+    void setDefaultRoleAbducibleConfiguration();
 }

@@ -15,4 +15,6 @@ public interface ConceptAbducibleConfigurator extends AbducibleContainer {
     default boolean areConceptAssertionsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept assertions");
     }
+
+    void setDefaultConceptAbducibleConfiguration();
 }

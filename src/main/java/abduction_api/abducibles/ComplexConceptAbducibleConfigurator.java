@@ -27,4 +27,6 @@ public interface ComplexConceptAbducibleConfigurator extends AbducibleContainer 
     default boolean areConceptComplementsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
+
+    void setDefaultComplexConceptAbducibleConfiguration();
 }
