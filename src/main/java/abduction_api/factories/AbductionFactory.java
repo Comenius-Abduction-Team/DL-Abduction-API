@@ -33,12 +33,12 @@ public interface AbductionFactory {
         throw new NotSupportedException("multi-axiom observation");
     }
 
-    default ThreadAbductionManager getThreadAbductionManager() throws NotSupportedException{
+    default ThreadAbductionManager getThreadAbductionManager() throws NotSupportedException {
         throw new NotSupportedException("multi-thread abduction");
     }
 
     default ThreadAbductionManager getThreadAbductionManager(OWLOntology backgroundKnowledge, OWLAxiom observation)
-            throws NotSupportedException, InvalidObservationException{
+            throws NotSupportedException, InvalidObservationException {
         throw new NotSupportedException("multi-thread abduction");
     }
 
