@@ -1,6 +1,7 @@
 package abduction_api.manager;
 
 import abduction_api.monitors.AbductionMonitor;
+import abduction_api.monitors.Percentage;
 
 public interface ThreadAbductionManager extends AbductionManager, Runnable {
 
@@ -12,7 +13,8 @@ public interface ThreadAbductionManager extends AbductionManager, Runnable {
         monitor.wait();
     }
 
-    default void updateProgress(AbductionMonitor monitor, double progress, String status) throws InterruptedException {
+    default void updateProgress(AbductionMonitor monitor, Percentage progress, String status)
+            throws InterruptedException {
         monitor.setProgress(progress);
         monitor.setStatusMessage(status);
         monitor.notifyAll();

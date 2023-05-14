@@ -2,13 +2,15 @@ package abduction_api.monitors;
 
 import abduction_api.manager.ExplanationWrapper;
 
+
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class AbductionMonitor {
 
     Set<ExplanationWrapper> explanations = new HashSet<>();
-    double progress = 0;
+    Percentage progress = new Percentage(0);
     String statusMessage = "";
 
     boolean newExplanationsAvailable = false;
@@ -18,7 +20,7 @@ public class AbductionMonitor {
         return newProgressAvailable;
     }
 
-    public double getProgress() {
+    public Percentage getProgress() {
         return progress;
     }
 
@@ -26,7 +28,7 @@ public class AbductionMonitor {
         newProgressAvailable = false;
     }
 
-    public void setProgress(double progress) {
+    public void setProgress(Percentage progress) {
         this.progress = progress;
         newProgressAvailable = true;
     }
@@ -63,7 +65,7 @@ public class AbductionMonitor {
 
     public void clearMonitor(){
         clearExplanations();
-        progress = 0;
+        Percentage progress = new Percentage(0);
         statusMessage = "";
     }
 }
