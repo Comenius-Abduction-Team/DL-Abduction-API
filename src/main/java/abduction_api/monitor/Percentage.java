@@ -18,7 +18,7 @@ public class Percentage implements Comparable<Percentage> {
 
     @Override
     public String toString() {
-        return Integer.toString(value);
+        return value + "%";
     }
 
     @Override
