@@ -1,22 +1,22 @@
-package abduction_api.abducibles;
+package abduction_api.abducible;
 
 import abduction_api.exception.NotSupportedException;
 
-public interface ComplexConceptExplanationConfigurator extends AbducibleContainer {
+public interface ComplexConceptExplanationConfigurator extends ExplanationConfigurator {
 
-    default void allowComplexConcepts(Boolean allowComplexConcepts) throws NotSupportedException {
+    default void setComplexConceptsAllowed(Boolean allowComplexConcepts) throws NotSupportedException {
         throw new NotSupportedException("configurating complex concepts");
     }
 
-    default void allowConceptComplements(Boolean allowConceptComplements) throws NotSupportedException {
+    default void setConceptComplementsAllowed(Boolean allowConceptComplements) throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
 
-    default boolean areComplexConceptsAllowed() throws NotSupportedException {
+    default boolean isComplexConceptsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating complex concepts");
     }
 
-    default boolean areConceptComplementsAllowed() throws NotSupportedException {
+    default boolean isConceptComplementsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
 
@@ -27,6 +27,4 @@ public interface ComplexConceptExplanationConfigurator extends AbducibleContaine
     default boolean getDefaultConceptComplementsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
-
-    void setDefaultComplexConceptExplanationConfiguration();
 }

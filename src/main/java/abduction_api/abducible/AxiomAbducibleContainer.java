@@ -1,4 +1,4 @@
-package abduction_api.abducibles;
+package abduction_api.abducible;
 
 import abduction_api.exception.AxiomAbducibleException;
 import org.semanticweb.owlapi.model.OWLAxiom;

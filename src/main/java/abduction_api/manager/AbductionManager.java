@@ -1,6 +1,7 @@
 package abduction_api.manager;
 
-import abduction_api.abducibles.AbducibleContainer;
+import abduction_api.abducible.AbducibleContainer;
+import abduction_api.abducible.ExplanationConfigurator;
 import abduction_api.exception.*;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -41,8 +42,14 @@ public interface AbductionManager {
 
     default String getFullLog(){ return ""; }
 
+    AbducibleContainer getAbducibleContainer();
+
     void setAbducibleContainer(AbducibleContainer abducibleContainer);
 
-    AbducibleContainer getAbducibleContainer();
+    ExplanationConfigurator getExplanationConfigurator();
+
+    void setExplanationConfigurator(ExplanationConfigurator explanationConfigurator);
+
+
 
 }

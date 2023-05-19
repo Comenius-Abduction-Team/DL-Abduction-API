@@ -1,15 +1,13 @@
-package abduction_api.monitors;
+package abduction_api.monitor;
 
 import abduction_api.manager.ExplanationWrapper;
-
-
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class AbductionMonitor {
 
-    Set<ExplanationWrapper> explanations = new HashSet<>();
+    Set<ExplanationWrapper> unprocessedExplanations = new HashSet<>();
     Percentage progress = new Percentage(0);
     String statusMessage = "";
 
@@ -33,12 +31,12 @@ public class AbductionMonitor {
         newProgressAvailable = true;
     }
 
-    public boolean areNewExplanationsAvailable() {
+    public boolean isNewExplanationsAvailable() {
         return newExplanationsAvailable;
     }
 
-    public Set<ExplanationWrapper> getExplanations() {
-        return explanations;
+    public Set<ExplanationWrapper> getUnprocessedExplanations() {
+        return unprocessedExplanations;
     }
 
     public void markExplanationsAsProcessed(){
@@ -46,11 +44,11 @@ public class AbductionMonitor {
     }
 
     public void clearExplanations(){
-        explanations.clear();
+        unprocessedExplanations.clear();
     }
 
     public void addNewExplanation(ExplanationWrapper explanation) {
-        explanations.add(explanation);
+        unprocessedExplanations.add(explanation);
         newExplanationsAvailable = true;
     }
 

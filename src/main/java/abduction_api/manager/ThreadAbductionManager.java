@@ -1,7 +1,7 @@
 package abduction_api.manager;
 
-import abduction_api.monitors.AbductionMonitor;
-import abduction_api.monitors.Percentage;
+import abduction_api.monitor.AbductionMonitor;
+import abduction_api.monitor.Percentage;
 
 public interface ThreadAbductionManager extends AbductionManager, Runnable {
 
