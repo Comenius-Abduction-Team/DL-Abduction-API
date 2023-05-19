@@ -4,19 +4,19 @@ import abduction_api.exception.NotSupportedException;
 
 public interface RoleExplanationConfigurator extends ExplanationConfigurator {
 
-    default void setRoleAssertionsAllowed(Boolean allowRoleAssertions) throws NotSupportedException {
+    default void allowRoleAssertions(Boolean allowRoleAssertions) throws NotSupportedException {
         throw new NotSupportedException("configurating role assertions");
     }
 
-    default void setLoopsAllowed(Boolean allowLoops) throws NotSupportedException {
+    default void allowLoops(Boolean allowLoops) throws NotSupportedException {
         throw new NotSupportedException("configurating loops");
     }
 
-    default boolean isRoleAssertionsAllowed() throws NotSupportedException {
+    default boolean areRoleAssertionsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating role assertions");
     }
 
-    default boolean isLoopsAllowed() throws NotSupportedException {
+    default boolean areLoopsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating loops");
     }
 

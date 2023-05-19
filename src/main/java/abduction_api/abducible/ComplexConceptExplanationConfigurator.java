@@ -4,19 +4,19 @@ import abduction_api.exception.NotSupportedException;
 
 public interface ComplexConceptExplanationConfigurator extends ExplanationConfigurator {
 
-    default void setComplexConceptsAllowed(Boolean allowComplexConcepts) throws NotSupportedException {
+    default void allowComplexConcepts(Boolean allowComplexConcepts) throws NotSupportedException {
         throw new NotSupportedException("configurating complex concepts");
     }
 
-    default void setConceptComplementsAllowed(Boolean allowConceptComplements) throws NotSupportedException {
+    default void allowConceptComplements(Boolean allowConceptComplements) throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
 
-    default boolean isComplexConceptsAllowed() throws NotSupportedException {
+    default boolean areComplexConceptsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating complex concepts");
     }
 
-    default boolean isConceptComplementsAllowed() throws NotSupportedException {
+    default boolean areConceptComplementsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
 
