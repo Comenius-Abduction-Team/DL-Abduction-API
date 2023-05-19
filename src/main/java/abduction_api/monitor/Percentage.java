@@ -2,7 +2,7 @@ package abduction_api.monitor;
 
 import abduction_api.exception.CommonException;
 
-public class Percentage {
+public class Percentage implements Comparable<Percentage> {
 
     private final int value;
 
@@ -16,4 +16,13 @@ public class Percentage {
         return value;
     }
 
+    @Override
+    public String toString() {
+        return Integer.toString(value);
+    }
+
+    @Override
+    public int compareTo(Percentage other) {
+        return Integer.compare(value, other.getValue());
+    }
 }
