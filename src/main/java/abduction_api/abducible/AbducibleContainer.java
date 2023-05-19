@@ -1,3 +1,3 @@
-package abduction_api.abducibles;
+package abduction_api.abducible;
 
 public interface AbducibleContainer {}

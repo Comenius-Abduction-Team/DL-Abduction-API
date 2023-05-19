@@ -1,4 +1,4 @@
-package abduction_api.monitors;
+package abduction_api.monitor;
 
 import abduction_api.manager.ExplanationWrapper;
 
@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class AbductionMonitor {
 
-    Set<ExplanationWrapper> explanations = new HashSet<>();
-    double progress = 0;
+    Set<ExplanationWrapper> unprocessedExplanations = new HashSet<>();
+    Percentage progress = new Percentage(0);
     String statusMessage = "";
 
     boolean newExplanationsAvailable = false;
@@ -18,7 +18,7 @@ public class AbductionMonitor {
         return newProgressAvailable;
     }
 
-    public double getProgress() {
+    public Percentage getProgress() {
         return progress;
     }
 
@@ -26,17 +26,17 @@ public class AbductionMonitor {
         newProgressAvailable = false;
     }
 
-    public void setProgress(double progress) {
+    public void setProgress(Percentage progress) {
         this.progress = progress;
         newProgressAvailable = true;
     }
 
-    public boolean areNewExplanationsAvailable() {
+    public boolean isNewExplanationsAvailable() {
         return newExplanationsAvailable;
     }
 
-    public Set<ExplanationWrapper> getExplanations() {
-        return explanations;
+    public Set<ExplanationWrapper> getUnprocessedExplanations() {
+        return unprocessedExplanations;
     }
 
     public void markExplanationsAsProcessed(){
@@ -44,11 +44,11 @@ public class AbductionMonitor {
     }
 
     public void clearExplanations(){
-        explanations.clear();
+        unprocessedExplanations.clear();
     }
 
     public void addNewExplanation(ExplanationWrapper explanation) {
-        explanations.add(explanation);
+        unprocessedExplanations.add(explanation);
         newExplanationsAvailable = true;
     }
 
@@ -63,7 +63,7 @@ public class AbductionMonitor {
 
     public void clearMonitor(){
         clearExplanations();
-        progress = 0;
+        Percentage progress = new Percentage(0);
         statusMessage = "";
     }
 }
