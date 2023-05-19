@@ -4,11 +4,11 @@ import abduction_api.exception.NotSupportedException;
 
 public interface ConceptExplanationConfigurator extends ExplanationConfigurator {
 
-    default void setConceptAssertionsAllowed(Boolean allowConceptAssertions) throws NotSupportedException {
+    default void allowConceptAssertions(Boolean allowConceptAssertions) throws NotSupportedException {
         throw new NotSupportedException("configurating concept assertions");
     }
 
-    default boolean isConceptAssertionsAllowed() throws NotSupportedException {
+    default boolean areConceptAssertionsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept assertions");
     }
 
