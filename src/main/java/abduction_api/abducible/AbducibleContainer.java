@@ -1,3 +1,7 @@
 package abduction_api.abducible;
 
-public interface AbducibleContainer {}
+public interface AbducibleContainer {
+
+    boolean isEmpty();
+
+}

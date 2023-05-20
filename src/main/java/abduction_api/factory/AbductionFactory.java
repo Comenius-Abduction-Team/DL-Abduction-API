@@ -40,8 +40,6 @@ public interface AbductionFactory {
         throw new NotSupportedException("multi-thread abduction");
     }
 
-    AbducibleContainer getAbducibleContainer();
-
     default SymbolAbducibleContainer getSymbolAbducibleContainer()
             throws NotSupportedException, SymbolAbducibleException {
         throw new NotSupportedException("symbol abducibles");
@@ -66,18 +64,15 @@ public interface AbductionFactory {
         throw new NotSupportedException("explanation configuration");
     }
 
-    default ConceptExplanationConfigurator getConceptExplanationConfigurator()
-            throws NotSupportedException {
+    default ConceptExplanationConfigurator getConceptExplanationConfigurator() throws NotSupportedException {
         throw new NotSupportedException("configurating concepts in explanations");
     }
 
-    default ComplexConceptExplanationConfigurator getComplexConceptExplanationConfigurator()
-            throws NotSupportedException {
+    default ComplexConceptExplanationConfigurator getComplexConceptExplanationConfigurator() throws NotSupportedException {
         throw new NotSupportedException("configurating complex concepts in explanations");
     }
 
-    default RoleExplanationConfigurator getRoleExplanationConfigurator()
-            throws NotSupportedException {
+    default RoleExplanationConfigurator getRoleExplanationConfigurator() throws NotSupportedException {
         throw new NotSupportedException("configurating roles in explanations");
     }
 }

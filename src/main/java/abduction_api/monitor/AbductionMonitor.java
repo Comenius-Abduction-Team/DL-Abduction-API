@@ -11,6 +11,8 @@ public class AbductionMonitor {
     Percentage progress = new Percentage(0);
     String statusMessage = "";
 
+    private int waitLimit = 0;
+
     boolean newExplanationsAvailable = false;
     boolean newProgressAvailable = false;
 
@@ -65,5 +67,13 @@ public class AbductionMonitor {
         clearExplanations();
         Percentage progress = new Percentage(0);
         statusMessage = "";
+    }
+
+    public int getWaitLimit() {
+        return waitLimit;
+    }
+
+    public void setWaitLimit(int waitLimit) {
+        this.waitLimit = waitLimit;
     }
 }
