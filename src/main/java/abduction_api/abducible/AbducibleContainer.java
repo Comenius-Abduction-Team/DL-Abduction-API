@@ -4,4 +4,6 @@ public interface AbducibleContainer {
 
     boolean isEmpty();
 
+    void clear();
+
 }
