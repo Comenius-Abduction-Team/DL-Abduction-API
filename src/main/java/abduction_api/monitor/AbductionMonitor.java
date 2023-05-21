@@ -33,7 +33,7 @@ public class AbductionMonitor {
         newProgressAvailable = true;
     }
 
-    public boolean isNewExplanationsAvailable() {
+    public boolean areNewExplanationsAvailable() {
         return newExplanationsAvailable;
     }
 
