@@ -40,6 +40,8 @@ public interface AbductionFactory {
         throw new NotSupportedException("multi-thread abduction");
     }
 
+    AbducibleContainer getAbducibleContainer();
+
     default SymbolAbducibleContainer getSymbolAbducibleContainer()
             throws NotSupportedException, SymbolAbducibleException {
         throw new NotSupportedException("symbol abducibles");
