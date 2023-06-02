@@ -65,7 +65,7 @@ public class AbductionMonitor {
 
     public void clearMonitor(){
         clearExplanations();
-        Percentage progress = new Percentage(0);
+        progress = new Percentage(0);
         statusMessage = "";
     }
 
