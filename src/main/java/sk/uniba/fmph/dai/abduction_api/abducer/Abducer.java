@@ -1,22 +1,25 @@
-package abduction_api.manager;
+package sk.uniba.fmph.dai.abduction_api.abducer;
 
-import abduction_api.abducible.AbducibleContainer;
-import abduction_api.abducible.ExplanationConfigurator;
-import abduction_api.exception.*;
+import sk.uniba.fmph.dai.abduction_api.abducible.Abducibles;
+import sk.uniba.fmph.dai.abduction_api.abducible.ExplanationConfigurator;
+import sk.uniba.fmph.dai.abduction_api.exception.*;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 
+import java.util.Collection;
 import java.util.Set;
 
-public interface AbductionManager {
+public interface Abducer {
 
     void setBackgroundKnowledge(OWLOntology backgroundKnowledge);
 
     OWLOntology getBackgroundKnowledge();
 
-    void setObservation(OWLAxiom observation) throws MultiObservationException, InvalidObservationException;
+    void setObservation(OWLAxiom observation) throws InvalidObservationException;
 
-    OWLAxiom getObservation() throws MultiObservationException;
+    void setObservation(Collection<OWLAxiom> observation) throws MultiObservationException, InvalidObservationException;
+
+    Collection<OWLAxiom> getObservation() throws MultiObservationException;
 
     default void setTimeout(double seconds) throws NotSupportedException {
         throw new NotSupportedException("setting timeout");
@@ -36,15 +39,15 @@ public interface AbductionManager {
 
     void solveAbduction();
 
-    Set<ExplanationWrapper> getExplanations();
+    Set<Explanation> getExplanations();
 
     default String getOutputMessage(){ return ""; }
 
     default String getFullLog(){ return ""; }
 
-    AbducibleContainer getAbducibleContainer();
+    Abducibles getAbducibleContainer();
 
-    void setAbducibleContainer(AbducibleContainer abducibleContainer);
+    void setAbducibleContainer(Abducibles abducibleContainer);
 
     ExplanationConfigurator getExplanationConfigurator();
 
