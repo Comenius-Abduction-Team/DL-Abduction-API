@@ -15,4 +15,8 @@ public interface ConceptConfigurator extends ExplanationConfigurator {
     default boolean getDefaultConceptAssertionsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept assertions");
     }
+
+    default void setDefaultConceptAssertionsAllowed() throws NotSupportedException {
+        throw new NotSupportedException("configurating concept assertions");
+    }
 }
