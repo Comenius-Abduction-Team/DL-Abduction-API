@@ -1,4 +1,4 @@
-package abduction_api.exception;
+package sk.uniba.fmph.dai.abduction_api.exception;
 
 public class MultiObservationException extends CommonException {
 

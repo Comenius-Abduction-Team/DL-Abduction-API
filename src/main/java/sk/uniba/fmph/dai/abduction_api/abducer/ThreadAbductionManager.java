@@ -1,14 +1,14 @@
-package abduction_api.manager;
+package sk.uniba.fmph.dai.abduction_api.abducer;
 
-import abduction_api.exception.CommonException;
-import abduction_api.monitor.AbductionMonitor;
-import abduction_api.monitor.Percentage;
+import sk.uniba.fmph.dai.abduction_api.exception.CommonException;
+import sk.uniba.fmph.dai.abduction_api.monitor.AbductionMonitor;
+import sk.uniba.fmph.dai.abduction_api.monitor.Percentage;
 
-public interface ThreadAbductionManager extends AbductionManager, Runnable {
+public interface ThreadAbductionManager extends Abducer, Runnable {
 
     AbductionMonitor getAbductionMonitor();
 
-    default void sendExplanation(ExplanationWrapper explanation) throws InterruptedException {
+    default void sendExplanation(Explanation explanation) throws InterruptedException {
         AbductionMonitor monitor = getAbductionMonitor();
         if (monitor == null)
             throw new CommonException("Abduction monitor is not initialised!");

@@ -1,13 +1,13 @@
-package abduction_api.monitor;
+package sk.uniba.fmph.dai.abduction_api.monitor;
 
-import abduction_api.manager.ExplanationWrapper;
+import sk.uniba.fmph.dai.abduction_api.abducer.Explanation;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class AbductionMonitor {
 
-    Set<ExplanationWrapper> unprocessedExplanations = new HashSet<>();
+    Set<Explanation> unprocessedExplanations = new HashSet<>();
     Percentage progress = new Percentage(0);
     String statusMessage = "";
 
@@ -37,7 +37,7 @@ public class AbductionMonitor {
         return newExplanationsAvailable;
     }
 
-    public Set<ExplanationWrapper> getUnprocessedExplanations() {
+    public Set<Explanation> getUnprocessedExplanations() {
         return unprocessedExplanations;
     }
 
@@ -49,7 +49,7 @@ public class AbductionMonitor {
         unprocessedExplanations.clear();
     }
 
-    public void addNewExplanation(ExplanationWrapper explanation) {
+    public void addNewExplanation(Explanation explanation) {
         unprocessedExplanations.add(explanation);
         newExplanationsAvailable = true;
     }

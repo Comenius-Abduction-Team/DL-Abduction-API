@@ -1,4 +1,4 @@
-package abduction_api.manager;
+package sk.uniba.fmph.dai.abduction_api.abducer;
 
 import org.semanticweb.owlapi.model.OWLAxiom;
 
@@ -7,25 +7,25 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class ExplanationWrapper {
+public class Explanation {
 
     private final Set<OWLAxiom> axioms;
     private String textRepresentation;
     private final int size;
 
-    public ExplanationWrapper(String textRepresentation){
+    public Explanation(String textRepresentation){
         axioms = new HashSet<>();
         this.textRepresentation = textRepresentation;
         size = 0;
     }
 
-    public ExplanationWrapper(Set<OWLAxiom> axioms, String textRepresentation){
+    public Explanation(Set<OWLAxiom> axioms, String textRepresentation){
         this.axioms = axioms;
         this.textRepresentation = textRepresentation;
         size = axioms.size();
     }
 
-    public ExplanationWrapper(OWLAxiom axiom, String textRepresentation){
+    public Explanation(OWLAxiom axiom, String textRepresentation){
         axioms = Collections.singleton(axiom);
         this.textRepresentation = textRepresentation;
         size = 1;

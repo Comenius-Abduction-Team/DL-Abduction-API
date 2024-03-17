@@ -1,6 +1,6 @@
-package abduction_api.monitor;
+package sk.uniba.fmph.dai.abduction_api.monitor;
 
-import abduction_api.exception.CommonException;
+import sk.uniba.fmph.dai.abduction_api.exception.CommonException;
 
 public class Percentage implements Comparable<Percentage> {
 
@@ -18,7 +18,7 @@ public class Percentage implements Comparable<Percentage> {
 
     @Override
     public String toString() {
-        return value + "%";
+        return value + " %";
     }
 
     @Override

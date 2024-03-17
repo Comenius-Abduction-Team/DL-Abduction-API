@@ -1,4 +1,4 @@
-package abduction_api.abducible;
+package sk.uniba.fmph.dai.abduction_api.abducible;
 
 public interface ExplanationConfigurator {
 
