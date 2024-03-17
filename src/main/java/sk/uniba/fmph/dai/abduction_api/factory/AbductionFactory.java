@@ -15,6 +15,8 @@ import java.util.Collection;
 
 public interface AbductionFactory {
 
+    SolverDescriptor getDescriptor();
+
     Abducer getAbducer();
 
     Abducer getAbducer(OWLOntology backgroundKnowledge, OWLAxiom observation)
