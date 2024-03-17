@@ -8,7 +8,7 @@ public interface ComplexConceptConfigurator extends ExplanationConfigurator {
         throw new NotSupportedException("configurating complex concepts");
     }
 
-    default void allowConceptComplements(Boolean allowConceptComplements) throws NotSupportedException {
+    default void allowComplementConcepts(Boolean allowConceptComplements) throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
 
@@ -16,7 +16,7 @@ public interface ComplexConceptConfigurator extends ExplanationConfigurator {
         throw new NotSupportedException("configurating complex concepts");
     }
 
-    default boolean areConceptComplementsAllowed() throws NotSupportedException {
+    default boolean areComplementConceptsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
 
@@ -24,7 +24,15 @@ public interface ComplexConceptConfigurator extends ExplanationConfigurator {
         throw new NotSupportedException("configurating complex concepts");
     }
 
-    default boolean getDefaultConceptComplementsAllowed() throws NotSupportedException {
+    default boolean getDefaultComplementConceptsAllowed() throws NotSupportedException {
+        throw new NotSupportedException("configurating concept complements");
+    }
+
+    default boolean setDefaultComplexConceptsAllowed() throws NotSupportedException {
+        throw new NotSupportedException("configurating complex concepts");
+    }
+
+    default boolean setDefaultConceptComplementsAllowed() throws NotSupportedException {
         throw new NotSupportedException("configurating concept complements");
     }
 }

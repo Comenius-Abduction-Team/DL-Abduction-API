@@ -28,4 +28,12 @@ public interface RoleConfigurator extends ExplanationConfigurator {
         throw new NotSupportedException("configurating loops");
     }
 
+    default void setDefaultRoleAssertionsAllowed() throws NotSupportedException {
+        throw new NotSupportedException("configurating role assertions");
+    }
+
+    default void setDefaultLoopsAllowed() throws NotSupportedException {
+        throw new NotSupportedException("configurating loops");
+    }
+
 }
