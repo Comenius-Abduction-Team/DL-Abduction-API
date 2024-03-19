@@ -39,7 +39,7 @@ public interface IAbducer {
 
     void solveAbduction();
 
-    Set<Explanation> getExplanations();
+    Collection<IExplanation> getExplanations();
 
     default String getOutputMessage(){ return ""; }
 

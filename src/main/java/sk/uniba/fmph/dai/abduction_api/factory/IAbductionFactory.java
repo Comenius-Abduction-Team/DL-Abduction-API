@@ -41,12 +41,12 @@ public interface IAbductionFactory {
 
     IAbducibles getAbducibles();
 
-    default SymbolAbducibles getSymbolAbducibles()
+    default ISymbolAbducibles getSymbolAbducibles()
             throws NotSupportedException, SymbolAbducibleException {
         throw new NotSupportedException("symbol abducibles");
     }
 
-    default SymbolAbducibles getSymbolAbducibles(Collection<OWLEntity> symbols)
+    default ISymbolAbducibles getSymbolAbducibles(Collection<OWLEntity> symbols)
             throws NotSupportedException, SymbolAbducibleException {
         throw new NotSupportedException("symbol abducibles");
     }
@@ -73,7 +73,7 @@ public interface IAbductionFactory {
         throw new NotSupportedException("configurating complex concepts in explanations");
     }
 
-    default RoleConfigurator getRoleConfigurator() throws NotSupportedException {
+    default IRoleConfigurator getRoleConfigurator() throws NotSupportedException {
         throw new NotSupportedException("configurating roles in explanations");
     }
 }
