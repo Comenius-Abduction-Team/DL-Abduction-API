@@ -8,7 +8,7 @@ public interface IThreadAbducer extends IAbducer, Runnable {
 
     AbductionMonitor getAbductionMonitor();
 
-    default void sendExplanation(Explanation explanation) throws InterruptedException {
+    default void sendExplanation(IExplanation explanation) throws InterruptedException {
         AbductionMonitor monitor = getAbductionMonitor();
         if (monitor == null)
             throw new CommonException("Abduction monitor is not initialised!");

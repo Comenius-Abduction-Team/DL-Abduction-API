@@ -2,7 +2,7 @@ package sk.uniba.fmph.dai.abduction_api.abducible;
 
 import sk.uniba.fmph.dai.abduction_api.exception.NotSupportedException;
 
-public interface RoleConfigurator extends IExplanationConfigurator {
+public interface IRoleConfigurator extends IExplanationConfigurator {
 
     default void allowRoleAssertions(Boolean allowRoleAssertions) throws NotSupportedException {
         throw new NotSupportedException("configurating role assertions");
