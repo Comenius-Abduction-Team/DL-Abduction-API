@@ -22,7 +22,7 @@ public interface IAbductionFactory {
     IAbducer getAbducer(OWLOntology backgroundKnowledge, OWLAxiom observation)
             throws InvalidObservationException;
 
-    IAbducer getAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
+    IAbducer getAbducer(OWLOntology backgroundKnowledge, Collection<OWLAxiom> observation)
             throws InvalidObservationException;
 
     default IThreadAbducer getThreadAbducer() throws NotSupportedException {
