@@ -4,9 +4,8 @@ import sk.uniba.fmph.dai.abduction_api.exception.AxiomAbducibleException;
 import org.semanticweb.owlapi.model.OWLAxiom;
 
 import java.util.Collection;
-import java.util.Set;
 
-public interface AxiomAbducibles extends Abducibles {
+public interface IAxiomAbducibles extends IAbducibles {
 
     void add(OWLAxiom axiom) throws AxiomAbducibleException;
 

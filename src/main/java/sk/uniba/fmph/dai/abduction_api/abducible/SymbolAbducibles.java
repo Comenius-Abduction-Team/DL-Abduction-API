@@ -6,7 +6,7 @@ import org.semanticweb.owlapi.model.OWLEntity;
 import java.util.Collection;
 import java.util.Set;
 
-public interface SymbolAbducibles extends Abducibles {
+public interface SymbolAbducibles extends IAbducibles {
 
     void add(OWLEntity symbol) throws SymbolAbducibleException;
 

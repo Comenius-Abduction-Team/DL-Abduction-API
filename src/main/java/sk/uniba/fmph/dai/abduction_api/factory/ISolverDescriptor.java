@@ -1,6 +1,6 @@
 package sk.uniba.fmph.dai.abduction_api.factory;
 
-public interface SolverDescriptor {
+public interface ISolverDescriptor {
 
     boolean hasThreadMode();
 

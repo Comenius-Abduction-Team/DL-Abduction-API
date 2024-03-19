@@ -5,41 +5,41 @@ import sk.uniba.fmph.dai.abduction_api.exception.AxiomAbducibleException;
 import sk.uniba.fmph.dai.abduction_api.exception.InvalidObservationException;
 import sk.uniba.fmph.dai.abduction_api.exception.NotSupportedException;
 import sk.uniba.fmph.dai.abduction_api.exception.SymbolAbducibleException;
-import sk.uniba.fmph.dai.abduction_api.abducer.Abducer;
-import sk.uniba.fmph.dai.abduction_api.abducer.ThreadAbducer;
+import sk.uniba.fmph.dai.abduction_api.abducer.IAbducer;
+import sk.uniba.fmph.dai.abduction_api.abducer.IThreadAbducer;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLOntology;
 
 import java.util.Collection;
 
-public interface AbductionFactory {
+public interface IAbductionFactory {
 
-    SolverDescriptor getDescriptor();
+    ISolverDescriptor getDescriptor();
 
-    Abducer getAbducer();
+    IAbducer getAbducer();
 
-    Abducer getAbducer(OWLOntology backgroundKnowledge, OWLAxiom observation)
+    IAbducer getAbducer(OWLOntology backgroundKnowledge, OWLAxiom observation)
             throws InvalidObservationException;
 
-    Abducer getAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
+    IAbducer getAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
             throws InvalidObservationException;
 
-    default ThreadAbducer getThreadAbducer() throws NotSupportedException {
+    default IThreadAbducer getThreadAbducer() throws NotSupportedException {
         throw new NotSupportedException("multi-thread abduction");
     }
 
-    default ThreadAbducer getThreadAbducer(OWLOntology backgroundKnowledge, OWLAxiom observation)
+    default IThreadAbducer getThreadAbducer(OWLOntology backgroundKnowledge, OWLAxiom observation)
             throws NotSupportedException, InvalidObservationException {
         throw new NotSupportedException("multi-thread abduction");
     }
 
-    default ThreadAbducer getThreadAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
+    default IThreadAbducer getThreadAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
             throws NotSupportedException, InvalidObservationException {
         throw new NotSupportedException("multi-thread abduction");
     }
 
-    Abducibles getAbducibles();
+    IAbducibles getAbducibles();
 
     default SymbolAbducibles getSymbolAbducibles()
             throws NotSupportedException, SymbolAbducibleException {
@@ -51,25 +51,25 @@ public interface AbductionFactory {
         throw new NotSupportedException("symbol abducibles");
     }
 
-    default AxiomAbducibles getAxiomAbducibles()
+    default IAxiomAbducibles getAxiomAbducibles()
             throws NotSupportedException, AxiomAbducibleException {
         throw new NotSupportedException("axiom abducibles");
     }
 
-    default AxiomAbducibles getAxiomAbducibles(Collection<OWLAxiom> axioms)
+    default IAxiomAbducibles getAxiomAbducibles(Collection<OWLAxiom> axioms)
             throws NotSupportedException, AxiomAbducibleException {
         throw new NotSupportedException("axiom abducibles");
     }
 
-    default ExplanationConfigurator getExplanationConfigurator() throws NotSupportedException{
+    default IExplanationConfigurator getExplanationConfigurator() throws NotSupportedException{
         throw new NotSupportedException("explanation configuration");
     }
 
-    default ConceptConfigurator getConceptConfigurator() throws NotSupportedException {
+    default IConceptConfigurator getConceptConfigurator() throws NotSupportedException {
         throw new NotSupportedException("configurating concepts in explanations");
     }
 
-    default ComplexConceptConfigurator getComplexConcepConfigurator() throws NotSupportedException {
+    default IComplexConceptConfigurator getComplexConcepConfigurator() throws NotSupportedException {
         throw new NotSupportedException("configurating complex concepts in explanations");
     }
 
