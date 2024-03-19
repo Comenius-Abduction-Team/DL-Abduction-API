@@ -4,7 +4,7 @@ import sk.uniba.fmph.dai.abduction_api.exception.CommonException;
 import sk.uniba.fmph.dai.abduction_api.monitor.AbductionMonitor;
 import sk.uniba.fmph.dai.abduction_api.monitor.Percentage;
 
-public interface ThreadAbductionManager extends Abducer, Runnable {
+public interface ThreadAbducer extends Abducer, Runnable {
 
     AbductionMonitor getAbductionMonitor();
 

@@ -6,7 +6,7 @@ import sk.uniba.fmph.dai.abduction_api.exception.InvalidObservationException;
 import sk.uniba.fmph.dai.abduction_api.exception.NotSupportedException;
 import sk.uniba.fmph.dai.abduction_api.exception.SymbolAbducibleException;
 import sk.uniba.fmph.dai.abduction_api.abducer.Abducer;
-import sk.uniba.fmph.dai.abduction_api.abducer.ThreadAbductionManager;
+import sk.uniba.fmph.dai.abduction_api.abducer.ThreadAbducer;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -25,16 +25,16 @@ public interface AbductionFactory {
     Abducer getAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
             throws InvalidObservationException;
 
-    default ThreadAbductionManager getThreadAbducer() throws NotSupportedException {
+    default ThreadAbducer getThreadAbducer() throws NotSupportedException {
         throw new NotSupportedException("multi-thread abduction");
     }
 
-    default ThreadAbductionManager getThreadAbducer(OWLOntology backgroundKnowledge, OWLAxiom observation)
+    default ThreadAbducer getThreadAbducer(OWLOntology backgroundKnowledge, OWLAxiom observation)
             throws NotSupportedException, InvalidObservationException {
         throw new NotSupportedException("multi-thread abduction");
     }
 
-    default ThreadAbductionManager getThreadAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
+    default ThreadAbducer getThreadAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
             throws NotSupportedException, InvalidObservationException {
         throw new NotSupportedException("multi-thread abduction");
     }
