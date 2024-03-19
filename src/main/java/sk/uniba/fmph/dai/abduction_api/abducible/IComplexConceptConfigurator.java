@@ -2,7 +2,7 @@ package sk.uniba.fmph.dai.abduction_api.abducible;
 
 import sk.uniba.fmph.dai.abduction_api.exception.NotSupportedException;
 
-public interface ComplexConceptConfigurator extends ExplanationConfigurator {
+public interface IComplexConceptConfigurator extends IExplanationConfigurator {
 
     default void allowComplexConcepts(Boolean allowComplexConcepts) throws NotSupportedException {
         throw new NotSupportedException("configurating complex concepts");

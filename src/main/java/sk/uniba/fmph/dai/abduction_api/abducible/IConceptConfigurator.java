@@ -2,7 +2,7 @@ package sk.uniba.fmph.dai.abduction_api.abducible;
 
 import sk.uniba.fmph.dai.abduction_api.exception.NotSupportedException;
 
-public interface ConceptConfigurator extends ExplanationConfigurator {
+public interface IConceptConfigurator extends IExplanationConfigurator {
 
     default void allowConceptAssertions(Boolean allowConceptAssertions) throws NotSupportedException {
         throw new NotSupportedException("configurating concept assertions");

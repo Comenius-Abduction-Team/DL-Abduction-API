@@ -1,7 +1,7 @@
 package sk.uniba.fmph.dai.abduction_api.abducer;
 
-import sk.uniba.fmph.dai.abduction_api.abducible.Abducibles;
-import sk.uniba.fmph.dai.abduction_api.abducible.ExplanationConfigurator;
+import sk.uniba.fmph.dai.abduction_api.abducible.IAbducibles;
+import sk.uniba.fmph.dai.abduction_api.abducible.IExplanationConfigurator;
 import sk.uniba.fmph.dai.abduction_api.exception.*;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -9,7 +9,7 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import java.util.Collection;
 import java.util.Set;
 
-public interface Abducer {
+public interface IAbducer {
 
     void setBackgroundKnowledge(OWLOntology backgroundKnowledge);
 
@@ -45,13 +45,13 @@ public interface Abducer {
 
     default String getFullLog(){ return ""; }
 
-    Abducibles getAbducibleContainer();
+    IAbducibles getAbducibleContainer();
 
-    void setAbducibleContainer(Abducibles abducibleContainer);
+    void setAbducibleContainer(IAbducibles abducibleContainer);
 
-    ExplanationConfigurator getExplanationConfigurator();
+    IExplanationConfigurator getExplanationConfigurator();
 
-    void setExplanationConfigurator(ExplanationConfigurator explanationConfigurator);
+    void setExplanationConfigurator(IExplanationConfigurator explanationConfigurator);
 
 
 
