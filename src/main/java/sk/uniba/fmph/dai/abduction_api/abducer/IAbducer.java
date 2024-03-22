@@ -7,7 +7,6 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 
 import java.util.Collection;
-import java.util.Set;
 
 public interface IAbducer {
 
@@ -45,14 +44,12 @@ public interface IAbducer {
 
     default String getFullLog(){ return ""; }
 
-    IAbducibles getAbducibleContainer();
+    IAbducibles getAbducibles();
 
-    void setAbducibleContainer(IAbducibles abducibleContainer);
+    void setAbducibles(IAbducibles abducibleContainer);
 
     IExplanationConfigurator getExplanationConfigurator();
 
     void setExplanationConfigurator(IExplanationConfigurator explanationConfigurator);
-
-
 
 }
