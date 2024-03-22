@@ -6,7 +6,7 @@ import sk.uniba.fmph.dai.abduction_api.exception.*;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 
-import java.util.Collection;
+import java.util.Set;
 
 public interface IAbducer {
 
@@ -16,9 +16,9 @@ public interface IAbducer {
 
     void setObservation(OWLAxiom observation) throws InvalidObservationException;
 
-    void setObservation(Collection<OWLAxiom> observation) throws MultiObservationException, InvalidObservationException;
+    void setObservation(Set<OWLAxiom> observation) throws MultiObservationException, InvalidObservationException;
 
-    Collection<OWLAxiom> getObservation() throws MultiObservationException;
+    Set<OWLAxiom> getObservation() throws MultiObservationException;
 
     default void setTimeout(double seconds) throws NotSupportedException {
         throw new NotSupportedException("setting timeout");
@@ -38,7 +38,7 @@ public interface IAbducer {
 
     void solveAbduction();
 
-    Collection<IExplanation> getExplanations();
+    Set<IExplanation> getExplanations();
 
     default String getOutputMessage(){ return ""; }
 

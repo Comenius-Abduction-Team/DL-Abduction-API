@@ -6,11 +6,9 @@ import java.util.*;
 
 public interface IExplanation {
 
-    Collection<OWLAxiom> getAxioms();
+    Set<OWLAxiom> getAxioms();
 
     String getTextRepresentation();
-
-    void setTextRepresentation(String textRepresentation);
 
     int getSize();
 }
