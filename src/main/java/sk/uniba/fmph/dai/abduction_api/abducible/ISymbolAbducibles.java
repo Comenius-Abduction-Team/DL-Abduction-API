@@ -16,7 +16,7 @@ public interface ISymbolAbducibles extends IAbducibles {
 
     void removeAll(Collection<OWLEntity> symbols) throws SymbolAbducibleException;
 
-    void setSymbols(Collection<OWLEntity> symbols) throws SymbolAbducibleException;
+    void setSymbols(Set<OWLEntity> symbols) throws SymbolAbducibleException;
 
     Set<OWLEntity> getSymbols();
 
