@@ -34,7 +34,7 @@ public interface IAbductionFactory {
         throw new NotSupportedException("multi-thread abduction");
     }
 
-    default IThreadAbducer getThreadAbducer(OWLOntology backgroundKnowledge, Collection<OWLEntity> observation)
+    default IThreadAbducer getThreadAbducer(OWLOntology backgroundKnowledge, Collection<OWLAxiom> observation)
             throws NotSupportedException, InvalidObservationException {
         throw new NotSupportedException("multi-thread abduction");
     }
