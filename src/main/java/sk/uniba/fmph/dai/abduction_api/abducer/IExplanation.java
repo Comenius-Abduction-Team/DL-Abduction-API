@@ -10,7 +10,5 @@ public interface IExplanation {
 
     String getTextRepresentation();
 
-    void setTextRepresentation(String textRepresentation);
-
     int getSize();
 }
