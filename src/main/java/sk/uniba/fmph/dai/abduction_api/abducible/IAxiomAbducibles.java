@@ -6,6 +6,9 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import java.util.Collection;
 import java.util.Set;
 
+/**
+ * Interface of an object storing the axiom abducibles - the only axioms that are allowed in the explanations.
+ */
 public interface IAxiomAbducibles extends IAbducibles {
 
     void add(OWLAxiom axiom) throws AxiomAbducibleException;
