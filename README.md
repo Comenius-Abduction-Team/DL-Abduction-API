@@ -1,6 +1,6 @@
 # DL ABDUCTION API
 
-An OWL API based Java library that provides a common interface to work with abduction solvers. 
+An [OWL API](https://github.com/owlcs/owlapi) based Java library that provides a common interface to work with abduction solvers. 
 
 # Update notes
 
