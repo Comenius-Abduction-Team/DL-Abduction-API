@@ -13,6 +13,10 @@ import org.semanticweb.owlapi.model.OWLOntology;
 
 import java.util.Set;
 
+
+/**
+ * Creates instances of the Abduction API classes.
+ */
 public interface IAbductionFactory {
 
     ISolverDescriptor getDescriptor();
